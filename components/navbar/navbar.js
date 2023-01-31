@@ -22,13 +22,26 @@ function Navbar() {
   const [sideNavOpen, setSidenavOpen] = React.useState(false);
   const theme = useTheme();
 
+  const scrollToElement = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <AppBar position="static" elevation={0} color="background">
+    <AppBar position="static" elevation={0} color="background" id="Navbar">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon
-            sx={{ display: { xs: "none", sm: "flex" }, mr: 1 }}
-            color="primary"
+          {/* <img src="/logo.png" alt="Film Finance App" /> */}
+          <Box
+            sx={{
+              display: { xs: "none", sm: "flex" },
+              mr: 1,
+              height: "50px",
+            }}
+            component="img"
+            src="/logo.png"
           />
 
           <Box
@@ -74,6 +87,7 @@ function Navbar() {
                   display: "block",
                   "&:hover": { color: theme.palette.primary.main },
                 }}
+                onClick={() => scrollToElement(page)}
               >
                 {page}
               </Button>

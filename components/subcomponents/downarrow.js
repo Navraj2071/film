@@ -11,7 +11,6 @@ const Downarrow = () => {
   }, []);
 
   const handleScroll = () => {
-    console.log("listening to scroll.");
     setIsArrow(false);
     window.removeEventListener("scroll", handleScroll);
   };

@@ -107,11 +107,17 @@ a {
 }
 
 .gradientText {
-  background: linear-gradient(-45deg, #00e7d8 0%, #0086e7 50%, #ff06aa 100%);
+  background: linear-gradient(45deg, #00e7d8 0%, #0086e7 33%, #ff06aa 66%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+/* .gradientText {
+  background: linear-gradient(-45deg, #ff06aa 50%, #0086e7 75%, #00e7d8 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+} */
 
 @keyframes downArrow {
   from {

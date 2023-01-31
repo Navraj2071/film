@@ -28,12 +28,21 @@ export default function Sidenav(props) {
     setOpen(open);
   };
 
+  const scrollToElement = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setOpen(false);
+    // window.setTimeout(() => setOpen(false), 2000);
+  };
+
   const list = () => (
     <Box
       sx={{ width: 300 }}
       color="primary"
       role="presentation"
-      onClick={toggleDrawer(false)}
+      // onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
     >
       <Button onClick={() => setOpen(false)}>
@@ -45,7 +54,7 @@ export default function Sidenav(props) {
         {pages.map((text, index) => (
           <React.Fragment key={"sidenav" + text}>
             <ListItem>
-              <ListItemButton>
+              <ListItemButton onClick={() => scrollToElement(text)}>
                 {/* <ListItemText primary={text} /> */}
                 <Typography variant="h5" color="text.medium" gutterbottom>
                   {text}
@@ -63,6 +72,7 @@ export default function Sidenav(props) {
     <Drawer
       open={open}
       onClose={toggleDrawer(false)}
+      disableRestoreFocus
       PaperProps={{
         sx: {
           backgroundColor: "background.dark",

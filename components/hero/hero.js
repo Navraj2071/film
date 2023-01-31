@@ -6,32 +6,31 @@ import Button from "@mui/material/Button";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TelegramIcon from "@mui/icons-material/Telegram";
+import RedditIcon from "@mui/icons-material/Reddit";
 import NewspaperIcon from "@mui/icons-material/Newspaper";
 import TextSnippetIcon from "@mui/icons-material/TextSnippet";
 import { useTheme } from "@emotion/react";
 import { useMediaQuery } from "@mui/material";
 import Text from "../subcomponents/headings";
 import Downarrow from "../subcomponents/downarrow";
+import ScrollToTopButton from "./fab";
 
 const Hero = () => {
   const theme = useTheme();
 
-  const large = useMediaQuery(theme.breakpoints.up("lg"));
-  const medium = useMediaQuery(theme.breakpoints.up("md"));
-  const small = useMediaQuery(theme.breakpoints.up("sm"));
   return (
-    <Box sx={{ backgroundColor: theme.palette.background.main }}>
+    <Box sx={{ backgroundColor: theme.palette.background.main }} id="Home">
       <Container
         maxWidth="xl"
         sx={{
-          //   minHeight: "90vh",
+          minHeight: "90vh",
           display: { xs: "flex", sm: "grid" },
           gridTemplateColumns: "1fr 1fr",
           flexDirection: "column",
           alignItems: { xs: "center", sm: "flex-start" },
           justifyContent: "center",
-          paddingTop: "5rem",
-          paddingBottom: "5rem",
+          paddingTop: { xs: "5rem", sm: "10rem" },
+          paddingBottom: { xs: "5rem", sm: "10rem" },
         }}
       >
         <Box
@@ -74,7 +73,17 @@ const Hero = () => {
             flexDirection: "column",
           }}
         >
-          <img src="/1.svg" alt="" width="100%" />
+          {/* <img src="/landing.gif" alt="" width="100%" /> */}
+          <video
+            controls={false}
+            loop
+            muted
+            src="/1.mp4"
+            width="100%"
+            autoPlay
+            type="video/mp4"
+            style={{ margin: "50px 0px" }}
+          />
           <Box
             sx={{
               display: "flex",
@@ -86,18 +95,28 @@ const Hero = () => {
           >
             <TwitterIcon
               sx={{
+                color: theme.palette.text.medium,
                 fontSize: { xs: "2rem", md: "2.5rem" },
                 "&:hover": { color: theme.palette.primary.main },
               }}
             />
             <LinkedInIcon
               sx={{
+                color: theme.palette.text.medium,
                 fontSize: { xs: "2rem", md: "2.5rem" },
                 "&:hover": { color: theme.palette.primary.main },
               }}
             />
             <TelegramIcon
               sx={{
+                color: theme.palette.text.medium,
+                fontSize: { xs: "2rem", md: "2.5rem" },
+                "&:hover": { color: theme.palette.primary.main },
+              }}
+            />
+            <RedditIcon
+              sx={{
+                color: theme.palette.text.medium,
                 fontSize: { xs: "2rem", md: "2.5rem" },
                 "&:hover": { color: theme.palette.primary.main },
               }}
@@ -106,6 +125,7 @@ const Hero = () => {
         </Box>
       </Container>
       <Downarrow />
+      <ScrollToTopButton />
     </Box>
   );
 };

@@ -13,6 +13,8 @@ const Text = ({ variant, text, gutterBottom, color, gradient, sx }) => {
     h2: large ? "h2" : medium ? "h3" : "h4",
     h3: large ? "h3" : medium ? "h4" : "h5",
     h4: large ? "h4" : medium ? "h5" : "h6",
+    h5: large ? "h5" : medium ? "h6" : "body1",
+    h6: large ? "h6" : medium ? "body1" : "body2",
   };
   return (
     <Typography

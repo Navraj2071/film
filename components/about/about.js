@@ -19,7 +19,7 @@ const About = () => {
     "Join us in our mission to revolutionize the film industry and empower independent filmmakers to bring their stories to life. Invest in the future of film with FilmFinance.app.";
 
   return (
-    <Box sx={{ backgroundColor: theme.palette.background.dark }}>
+    <Box sx={{ backgroundColor: theme.palette.background.dark }} id="About">
       <Container
         maxWidth="xl"
         sx={{
@@ -76,6 +76,7 @@ const About = () => {
           endIcon={<TelegramIcon />}
           sx={{
             "&:hover": { color: theme.palette.primary.main },
+            marginTop: { xs: "5rem", sm: "10rem" },
           }}
         >
           Join Us
