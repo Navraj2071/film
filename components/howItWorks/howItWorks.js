@@ -38,9 +38,8 @@ const HowItWorks = () => {
       >
         <Text
           text="How does it work"
-          gradient
           variant="h2"
-          sx={{ fontWeight: 600 }}
+          sx={{ fontWeight: 600, textShadow: "0px 0px 10px black" }}
           gutterBottom
         />
         <Box

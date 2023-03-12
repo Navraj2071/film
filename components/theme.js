@@ -1,5 +1,7 @@
 import { createTheme } from "@mui/material/styles";
 
+const font = "'Ubuntu', sans-serif";
+
 const theme = createTheme({
   components: {
     MuiButton: {
@@ -17,7 +19,8 @@ const theme = createTheme({
     },
   },
   typography: {
-    // fontFamily: ["Tenor Sans"],
+    fontFamily: [font],
+
     button: {
       textTransform: "none",
       fontSize: "1.2rem",
@@ -27,19 +30,27 @@ const theme = createTheme({
   palette: {
     primary: {
       // main: "#e7b800",
-      main: "#ed2938",
+      main: "rgb(235, 119, 119)",
     },
     secondary: {
       main: "#ff8c01",
     },
     background: {
-      main: "#212121",
-      dark: "#151515",
+      // main: "#571024",
+      main: "rgba(0, 0, 0, 0)",
+      // dark: "#151515",
+      dark: "#054877",
       light: "#333333",
     },
+    // text: {
+    //   high: "rgba(255, 255, 255, 1)",
+    //   medium: "rgba(255, 255, 255, 0.87)",
+    //   low: "rgba(255, 255, 255, 0.6)",
+    //   disabled: "rgba(255, 255, 255, 0.4)",
+    // },
     text: {
-      high: "rgba(255, 255, 255, 1)",
-      medium: "rgba(255, 255, 255, 0.87)",
+      high: "rgb(235, 119, 119)",
+      medium: "white",
       low: "rgba(255, 255, 255, 0.6)",
       disabled: "rgba(255, 255, 255, 0.4)",
     },

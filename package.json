@@ -14,8 +14,14 @@
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.6",
     "@next/font": "13.1.5",
+    "@react-three/drei": "^9.57.0",
+    "@react-three/fiber": "^8.11.9",
+    "gltf-pipeline": "^4.0.2",
+    "gsap": "^3.11.4",
     "next": "13.1.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "three": "^0.150.1",
+    "three-noise": "^1.1.2"
   }
 }

@@ -15,6 +15,7 @@ import AdbIcon from "@mui/icons-material/Adb";
 import TextSnippetIcon from "@mui/icons-material/TextSnippet";
 import { useTheme } from "@emotion/react";
 import Sidenav from "./sidenav";
+import Text from "../subcomponents/headings";
 
 const pages = ["About", "Roadmap", "Contact"];
 
@@ -33,21 +34,10 @@ function Navbar() {
     <AppBar position="static" elevation={0} color="background" id="Navbar">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* <img src="/logo.png" alt="Film Finance App" /> */}
-          <Box
-            sx={{
-              display: { xs: "none", sm: "flex" },
-              mr: 1,
-              height: "50px",
-            }}
-            component="img"
-            src="/logo.png"
-          />
-
           <Box
             sx={{
               flexGrow: 1,
-              display: { xs: "flex", sm: "none" },
+              display: { xs: "flex", md: "none" },
             }}
           >
             <IconButton
@@ -65,17 +55,38 @@ function Navbar() {
               pages={["About", "Features", "Team", "Roadmap", "Contact"]}
             />
           </Box>
-          {/* <Avatar
+          <Box
             sx={{
-              display: { xs: "flex", sm: "none" },
-              mr: "auto",
+              display: { xs: "flex", sm: "flex" },
+              mr: 1,
+              height: "50px",
             }}
-          /> */}
+            component="img"
+            src="/logo4.png"
+          />
+          <Button
+            sx={{
+              my: 2,
+              display: { xs: "none", sm: "block" },
+
+              "&:hover": { color: theme.palette.primary.main },
+            }}
+            onClick={() => scrollToElement("home")}
+          >
+            <Text
+              variant="h4"
+              text="FilmFinance"
+              sx={{
+                color: theme.palette.text.high,
+                textShadow: "0px 0px 10px black",
+              }}
+            />
+          </Button>
 
           <Box
             sx={{
               flexGrow: 1,
-              display: { xs: "none", sm: "flex" },
+              display: { xs: "none", md: "flex" },
               justifyContent: "flex-end",
             }}
           >
@@ -93,9 +104,8 @@ function Navbar() {
               </Button>
             ))}
           </Box>
-
           <Box sx={{ flexGrow: 0 }}>
-            <Button variant="contained" endIcon={<TextSnippetIcon />}>
+            <Button variant="outlined" endIcon={<TextSnippetIcon />}>
               Whitepaper
             </Button>
           </Box>

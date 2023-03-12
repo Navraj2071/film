@@ -24,6 +24,7 @@ const Downarrow = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        zIndex: 4,
       }}
     >
       {isArrow && (
@@ -31,8 +32,8 @@ const Downarrow = () => {
           style={{
             height: "30px",
             width: "30px",
-            borderLeft: "1px solid " + theme.palette.primary.main,
-            borderBottom: "1px solid " + theme.palette.primary.main,
+            borderLeft: "1px solid " + theme.palette.text.medium,
+            borderBottom: "1px solid " + theme.palette.text.medium,
             animation: "downArrow 2s infinite",
           }}
         ></div>

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -128,4 +129,93 @@ a {
     transform: translateY(50%) rotate(-45deg);
     opacity: 1;
   }
+}
+
+.overlay {
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(40px);
+  position: fixed;
+  top: 0px;
+  /* display: none; */
+}
+
+.gradientBackground {
+  /* background: linear-gradient(90deg, #571024 0%, #ff8e8e 150%); */
+  background: linear-gradient(-45deg, #00e7d8 0%, #0086e7 30%, #ff06aa 100%);
+  /* opacity: 0.5; */
+  /* filter: blur(10px); */
+}
+.gradientBackground2 {
+  background: radial-gradient(circle farthest-side, #00e7d86b, #054877);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  z-index: 2;
+  opacity: 0.8;
+  /* display: none; */
+}
+
+.contentOverlay {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  margin: auto;
+  z-index: 3;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #054877;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00e7d86b;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ff06aa;
+}
+
+@keyframes textAppear {
+  from {
+    transform: scaleY(0) translateX(-50%);
+  }
+  to {
+    transform: scaleY(1) translateX(0%);
+  }
+}
+
+.poster {
+  box-shadow: 10px 10px 10px #054877;
+  height: 75vh;
+  position: relative;
+  transform: scale(0.9);
+}
+
+.poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.posterFrame {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.posterFrame img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
 }

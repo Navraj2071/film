@@ -12,6 +12,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import Divider from "@mui/material/Divider";
 import { Typography } from "@mui/material";
 import { useTheme } from "@emotion/react";
+import Text from "../subcomponents/headings";
 
 export default function Sidenav(props) {
   const { open, setOpen, pages } = props;

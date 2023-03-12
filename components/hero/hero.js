@@ -8,29 +8,66 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import RedditIcon from "@mui/icons-material/Reddit";
 import NewspaperIcon from "@mui/icons-material/Newspaper";
-import TextSnippetIcon from "@mui/icons-material/TextSnippet";
 import { useTheme } from "@emotion/react";
-import { useMediaQuery } from "@mui/material";
 import Text from "../subcomponents/headings";
 import Downarrow from "../subcomponents/downarrow";
 import ScrollToTopButton from "./fab";
+import { useState, useEffect, useRef } from "react";
+
+import Navbar from "../navbar/navbar";
+import gsap from "gsap";
+import MotionPathPlugin from "gsap/dist/MotionPathPlugin";
 
 const Hero = () => {
   const theme = useTheme();
+  const posterRef = useRef();
+
+  const texts = ["Create", "Invest in", "Trade", "Watch", "Love"];
+  const [myText, setMyText] = useState("Love");
+  const TextComp = () => (
+    <span style={{ animation: "textAppear 1s" }}>{myText} </span>
+  );
+  const [poster, setPoster] = useState(1);
+
+  gsap.registerPlugin(MotionPathPlugin);
+
+  const poppulateText = () => {
+    let currentIndex = texts.indexOf(myText);
+    let newIndex = currentIndex + 1;
+    if (currentIndex === 4) {
+      newIndex = 0;
+    }
+    setMyText(texts[newIndex]);
+    poppulatePoster();
+  };
+  const poppulatePoster = () => {
+    setPoster((prev) => {
+      if (prev == 12) {
+        return 1;
+      } else return prev + 1;
+    });
+  };
+
+  useEffect(() => {
+    const myInterval = setInterval(poppulateText, "2000");
+    return () => clearInterval(myInterval);
+  });
+
+  const posterImage = "/posters/" + poster + ".png";
 
   return (
-    <Box sx={{ backgroundColor: theme.palette.background.main }} id="Home">
+    <Box id="Home">
+      <Navbar />
       <Container
         maxWidth="xl"
         sx={{
-          minHeight: "90vh",
           display: { xs: "flex", sm: "grid" },
           gridTemplateColumns: "1fr 1fr",
           flexDirection: "column",
           alignItems: { xs: "center", sm: "flex-start" },
           justifyContent: "center",
-          paddingTop: { xs: "5rem", sm: "10rem" },
-          paddingBottom: { xs: "5rem", sm: "10rem" },
+          paddingTop: { xs: "5rem", sm: "5rem" },
+          paddingBottom: { xs: "5rem", sm: "5rem" },
         }}
       >
         <Box
@@ -40,15 +77,40 @@ const Hero = () => {
             flexDirection: "column",
             alignItems: { xs: "center", sm: "flex-start" },
             textAlign: { xs: "center", sm: "left" },
+            height: "100%",
+            justifyContent: "center",
           }}
         >
-          <Text
+          {/* <Text
             variant="h2"
-            text="Film Finance App"
+            text="Trade Film <span>dfgdf</span> "
             gutterBottom
-            gradient
-            sx={{ fontWeight: "800" }}
-          />
+            sx={{ fontWeight: "800", color: theme.palette.text.high }}
+          /> */}
+
+          <Typography
+            variant="h2"
+            gutterBottom
+            sx={{
+              fontWeight: "800",
+              color: theme.palette.text.medium,
+              textShadow: "0px 0px 10px black",
+              width: "100%",
+              display: { xs: "flex", sm: "grid" },
+              gridTemplateColumns: "1fr 1fr",
+              flexDirection: "column",
+            }}
+          >
+            <TextComp />
+            <span
+              style={{
+                color: theme.palette.text.high,
+              }}
+            >
+              Films
+            </span>
+          </Typography>
+
           <Text
             variant="h4"
             text="Decentralized Media Funding and Streaming Platform"
@@ -56,7 +118,7 @@ const Hero = () => {
           />
 
           <Button
-            variant="outlined"
+            variant="contained"
             endIcon={<NewspaperIcon />}
             sx={{
               "&:hover": { color: theme.palette.primary.main },
@@ -71,25 +133,22 @@ const Hero = () => {
             display: { xs: "flex", md: "grid" },
             gridTemplateColumns: "5fr 1fr",
             flexDirection: "column",
+            height: "100%",
           }}
         >
-          {/* <img src="/landing.gif" alt="" width="100%" /> */}
-          <video
-            controls={false}
-            loop
-            muted
-            src="/1.mp4"
-            width="100%"
-            autoPlay
-            type="video/mp4"
-            style={{ margin: "50px 0px" }}
-          />
+          <div className="poster" ref={posterRef}>
+            <img src={posterImage} alt="" width="100%" height="100%" />
+            <div className="posterFrame">
+              <img src="/posters/frame.png" alt="" width="100%" height="100%" />
+            </div>
+          </div>
+
           <Box
             sx={{
               display: "flex",
               flexDirection: { xs: "row", md: "column" },
               alignItems: "flex-end",
-              justifyContent: { xs: "center", md: "flex-start" },
+              justifyContent: { xs: "center", md: "center" },
               gap: "1rem",
             }}
           >

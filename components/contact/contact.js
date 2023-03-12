@@ -11,11 +11,12 @@ import MailIcon from "@mui/icons-material/Mail";
 const Contact = () => {
   const theme = useTheme();
   return (
-    <Box sx={{ backgroundColor: theme.palette.background.light }} id="Contact">
+    <Box sx={{ backgroundColor: theme.palette.background.main }} id="Contact">
       <Container
         maxWidth="xl"
         sx={{
           //   minHeight: "90vh",
+          backgroundColor: theme.palette.background.dark,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -27,9 +28,8 @@ const Contact = () => {
       >
         <Text
           text="Contact Us"
-          gradient
           variant="h2"
-          sx={{ fontWeight: 600 }}
+          sx={{ fontWeight: 600, textShadow: "0px 0px 10px black" }}
           gutterBottom
         />
         <Text text="We would love to hear from you" variant="h4" gutterBottom />

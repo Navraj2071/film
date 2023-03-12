@@ -76,7 +76,8 @@ const Features = () => {
   ];
 
   return (
-    <Box sx={{ backgroundColor: theme.palette.background.dark }} id="Features">
+    // <Box sx={{ backgroundColor: theme.palette.background.dark }} id="Features">
+    <Box id="Features">
       <Container
         maxWidth="xl"
         sx={{
@@ -99,9 +100,8 @@ const Features = () => {
         >
           <Text
             text="Features"
-            gradient
             variant="h2"
-            sx={{ fontWeight: 600 }}
+            sx={{ fontWeight: 600, textShadow: "0px 0px 10px black" }}
             gutterBottom
           />
           <Box
