@@ -18,6 +18,8 @@ const About = () => {
   const aboutText4 =
     "Join us in our mission to revolutionize the film industry and empower independent filmmakers to bring their stories to life. Invest in the future of film with FilmFinance.app.";
 
+  const missionText =
+    "At FilmFinance.App, we aim to revolutionize the film industry by providing a platform for crowdfunding through film tokens, enabling the trading of these tokens, and creating a watch-to-earn program for viewers. Our goal is to make film financing and distribution more accessible, transparent, and inclusive for everyone involved.";
   return (
     // <Box sx={{ backgroundColor: theme.palette.background.dark }} id="About">
     <Box id="About">
@@ -44,13 +46,13 @@ const About = () => {
         >
           <Text
             text="About"
-            gradient
             variant="h2"
-            sx={{ fontWeight: 600 }}
+            sx={{ fontWeight: 600, textShadow: "0px 0px 10px black" }}
             gutterBottom
           />
+          <Text text={missionText} variant="h4" gutterBottom />
 
-          {[aboutText1, aboutText2, aboutText3, aboutText4].map(
+          {/* {[aboutText1, aboutText2, aboutText3, aboutText4].map(
             (item, index) => (
               <Box
                 key={item}
@@ -70,7 +72,7 @@ const About = () => {
                 />
               </Box>
             )
-          )}
+          )} */}
         </Box>
         <Button
           variant="outlined"

@@ -12,11 +12,15 @@ const HowItWorks = () => {
   const howItWorksText1 =
     "Film Finance App uses blockchain technology to launch tokens for its various use cases.";
   const howItWorksText2 =
-    "The platform launches ERC-20 tokens for every film project.";
+    "The platform launches ERC-721 tokens for every film project.";
   const howItWorksText3 =
     "The film tokens can be bought/sold and traded on the token exchange.";
   const howItWorksText4 =
-    "FILM token is the platform's underlying token. Advertisers pay with FILM token per view od ads and users get paid in FILM token for watching ads.";
+    "FILM token (FFA) is the platform's underlying token.";
+  const howItWorksText5 =
+    "The media streaming platform uses ad-Revenue to reward Content Creators and Users.";
+  const howItWorksText6 =
+    "Advertisers pay with FILM token per view of ads. Content creators and Users get paid in FILM token for watching ads.";
 
   return (
     <Box
@@ -57,36 +61,45 @@ const HowItWorks = () => {
               alignItems: "flex-start",
             }}
           >
-            <Text
-              text={howItWorksText1}
-              variant="h5"
-              sx={{ maxWidth: "500px", textAlign: "left" }}
-              gutterBottom
-            />
-            <br />
-            <Text
-              text={howItWorksText2}
-              variant="h5"
-              sx={{ maxWidth: "500px", textAlign: "left" }}
-              gutterBottom
-            />
-            <Text
-              text={howItWorksText3}
-              variant="h5"
-              sx={{ maxWidth: "500px", textAlign: "left" }}
-              gutterBottom
-            />
-            <br />
-            <Text
-              text={howItWorksText4}
-              variant="h5"
-              sx={{ maxWidth: "500px", textAlign: "left" }}
-              gutterBottom
-            />
+            {[
+              howItWorksText1,
+              howItWorksText2,
+              howItWorksText3,
+              howItWorksText4,
+              howItWorksText5,
+              howItWorksText6,
+            ].map((item) => (
+              <Box
+                key={item}
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "20px",
+                  margin: "10px 0px",
+                }}
+              >
+                <div
+                  style={{
+                    width: "20px",
+                    minWidth: "20px",
+                    height: "20px",
+                    borderRadius: "20px",
+                    background: theme.palette.primary.main,
+                  }}
+                ></div>
+                <Text
+                  text={item}
+                  variant="h5"
+                  sx={{ maxWidth: "500px", textAlign: "left" }}
+                  gutterBottom
+                />
+              </Box>
+            ))}
           </Box>
           <Box
             sx={{
               width: "100%",
+              borderRadius: "20px",
             }}
             component="img"
             src="/flow.png"

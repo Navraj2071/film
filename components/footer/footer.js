@@ -66,20 +66,19 @@ const Logo = () => {
           height: "100px",
         }}
         component="img"
-        src="/logo.png"
+        src="/logo4.png"
       />
       <Text
         text="FILMFINANCE.APP"
         variant="h5"
-        gradient
-        sx={{ fontWeight: "800" }}
+        sx={{ fontWeight: "800", textShadow: "0px 0px 10px black" }}
       />
     </Box>
   );
 };
 
 const Navigation = () => {
-  const pages = ["Home", "About", "Team", "Roadmap"];
+  const pages = ["Home", "About", "Team"];
   const theme = useTheme();
 
   const scrollToElement = (id) => {

@@ -69,8 +69,8 @@ export default function Home() {
       <div className="gradientBackground2"></div>
       <div className="contentOverlay">
         <Hero />
-        {/* <About /> */}
         <Features />
+        <About />
         <HowItWorks />
         <Team />
         <Roadmap />

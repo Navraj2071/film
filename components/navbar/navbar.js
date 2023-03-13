@@ -52,7 +52,7 @@ function Navbar() {
             <Sidenav
               open={sideNavOpen}
               setOpen={setSidenavOpen}
-              pages={["About", "Features", "Team", "Roadmap", "Contact"]}
+              pages={["Features", "About", "Team", "Roadmap", "Contact"]}
             />
           </Box>
           <Box

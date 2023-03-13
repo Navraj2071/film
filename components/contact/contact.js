@@ -16,7 +16,7 @@ const Contact = () => {
         maxWidth="xl"
         sx={{
           //   minHeight: "90vh",
-          backgroundColor: theme.palette.background.dark,
+
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -33,62 +33,78 @@ const Contact = () => {
           gutterBottom
         />
         <Text text="We would love to hear from you" variant="h4" gutterBottom />
-        <TextField
-          id="standard-basic"
-          label="Name"
-          variant="standard"
-          color="primary"
-          inputProps={{
-            style: {
-              fontSize: 30,
-              color: theme.palette.text.medium,
-              margin: "20px",
-            },
+        <Box
+          sx={{
+            //   minHeight: "90vh",
+            background: theme.palette.background.dark,
+            width: "100%",
+            maxWidth: "600px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            textAlign: "center",
+            padding: "20px",
+            borderRadius: "20px",
           }}
-          InputLabelProps={{
-            style: { fontSize: 15, color: theme.palette.text.disabled },
-          }}
-          sx={{ width: "100%", maxWidth: "500px" }}
-        />
-        <TextField
-          id="standard-basic"
-          label="Email"
-          variant="standard"
-          color="primary"
-          inputProps={{
-            style: {
-              fontSize: 30,
-              color: theme.palette.text.medium,
-              margin: "20px",
-            },
-          }}
-          InputLabelProps={{
-            style: { fontSize: 15, color: theme.palette.text.disabled },
-          }}
-          sx={{ width: "100%", maxWidth: "500px" }}
-        />
-        <TextField
-          id="standard-basic"
-          label="Message"
-          variant="standard"
-          color="primary"
-          multiline
-          rows={5}
-          inputProps={{
-            style: {
-              fontSize: 30,
-              color: theme.palette.text.medium,
-              margin: "20px",
-            },
-          }}
-          InputLabelProps={{
-            style: { fontSize: 15, color: theme.palette.text.disabled },
-          }}
-          sx={{ width: "100%", maxWidth: "500px", marginBottom: "50px" }}
-        />
-        <Button variant="contained" endIcon={<MailIcon />}>
-          Submit
-        </Button>
+        >
+          <TextField
+            id="standard-basic"
+            label="Name"
+            variant="standard"
+            color="primary"
+            inputProps={{
+              style: {
+                fontSize: 30,
+                color: theme.palette.text.medium,
+                margin: "20px",
+              },
+            }}
+            InputLabelProps={{
+              style: { fontSize: 15, color: theme.palette.text.disabled },
+            }}
+            sx={{ width: "100%", maxWidth: "500px" }}
+          />
+          <TextField
+            id="standard-basic"
+            label="Email"
+            variant="standard"
+            color="primary"
+            inputProps={{
+              style: {
+                fontSize: 30,
+                color: theme.palette.text.medium,
+                margin: "20px",
+              },
+            }}
+            InputLabelProps={{
+              style: { fontSize: 15, color: theme.palette.text.disabled },
+            }}
+            sx={{ width: "100%", maxWidth: "500px" }}
+          />
+          <TextField
+            id="standard-basic"
+            label="Message"
+            variant="standard"
+            color="primary"
+            multiline
+            rows={5}
+            inputProps={{
+              style: {
+                fontSize: 30,
+                color: theme.palette.text.medium,
+                margin: "20px",
+              },
+            }}
+            InputLabelProps={{
+              style: { fontSize: 15, color: theme.palette.text.disabled },
+            }}
+            sx={{ width: "100%", maxWidth: "500px", marginBottom: "50px" }}
+          />
+          <Button variant="contained" endIcon={<MailIcon />}>
+            Submit
+          </Button>
+        </Box>
       </Container>
     </Box>
   );
