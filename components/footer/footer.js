@@ -133,6 +133,7 @@ const Social = () => {
           fontSize: { xs: "2rem", md: "2.5rem" },
           "&:hover": { color: theme.palette.primary.main },
         }}
+        onClick={() => window.open("https://twitter.com/Filmfinanceapp/")}
       />
       <LinkedInIcon
         sx={{
@@ -140,6 +141,9 @@ const Social = () => {
           fontSize: { xs: "2rem", md: "2.5rem" },
           "&:hover": { color: theme.palette.primary.main },
         }}
+        onClick={() =>
+          window.open("https://www.linkedin.com/company/filmfinanceapp/")
+        }
       />
       <TelegramIcon
         sx={{
@@ -147,14 +151,9 @@ const Social = () => {
           fontSize: { xs: "2rem", md: "2.5rem" },
           "&:hover": { color: theme.palette.primary.main },
         }}
+        onClick={() => window.open("https://t.me/+zgtoRoLProc3MWU1")}
       />
-      <RedditIcon
-        sx={{
-          color: theme.palette.text.medium,
-          fontSize: { xs: "2rem", md: "2.5rem" },
-          "&:hover": { color: theme.palette.primary.main },
-        }}
-      />
+      <DiscordIcon />
     </Box>
   );
 };
@@ -175,5 +174,16 @@ const Rights = () => {
         variant="subtitle2"
       />
     </Box>
+  );
+};
+
+const DiscordIcon = () => {
+  return (
+    <img
+      src="/discord.svg"
+      style={{ height: "1.8rem" }}
+      className="discord"
+      onClick={() => window.open("https://discord.gg/djBrRfAS3w")}
+    />
   );
 };

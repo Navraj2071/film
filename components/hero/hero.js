@@ -13,6 +13,7 @@ import Text from "../subcomponents/headings";
 import Downarrow from "../subcomponents/downarrow";
 import ScrollToTopButton from "./fab";
 import { useState, useEffect, useRef } from "react";
+import SimpleDialogDemo from "./subscribepop";
 
 import Navbar from "../navbar/navbar";
 import gsap from "gsap";
@@ -28,8 +29,7 @@ const Hero = () => {
     <span style={{ animation: "textAppear 1s" }}>{myText} </span>
   );
   const [poster, setPoster] = useState(1);
-
-  gsap.registerPlugin(MotionPathPlugin);
+  const [subscribeOpen, setSubscribe] = useState(false);
 
   const poppulateText = () => {
     let currentIndex = texts.indexOf(myText);
@@ -54,6 +54,10 @@ const Hero = () => {
   });
 
   const posterImage = "/posters/" + poster + ".png";
+
+  const subscribe = () => {
+    setSubscribe(true);
+  };
 
   return (
     <Box id="Home">
@@ -90,13 +94,12 @@ const Hero = () => {
 
           <Typography
             variant="h2"
-            gutterBottom
             sx={{
               fontWeight: "800",
               color: theme.palette.text.medium,
               textShadow: "0px 0px 10px black",
               width: "100%",
-              display: { xs: "flex", sm: "grid" },
+              display: { xs: "flex", sm: "flex" },
               gridTemplateColumns: "1fr 1fr",
               flexDirection: "column",
             }}
@@ -105,6 +108,8 @@ const Hero = () => {
             <span
               style={{
                 color: theme.palette.text.high,
+                paddingBottom: "0px",
+                lineHeight: "60px",
               }}
             >
               Films
@@ -115,6 +120,7 @@ const Hero = () => {
             variant="h4"
             text="Decentralized Media Funding and Streaming Platform"
             gutterBottom
+            sx={{ marginTop: "0px", paddingTop: "0px" }}
           />
 
           <Button
@@ -123,6 +129,7 @@ const Hero = () => {
             sx={{
               "&:hover": { color: theme.palette.primary.main },
             }}
+            onClick={subscribe}
           >
             Subscribe
           </Button>
@@ -139,7 +146,12 @@ const Hero = () => {
           <div className="poster" ref={posterRef}>
             <img src={posterImage} alt="" width="100%" height="100%" />
             <div className="posterFrame">
-              <img src="/posters/frame.png" alt="" width="100%" height="100%" />
+              <img
+                src="/posters/frame2.png"
+                alt=""
+                width="100%"
+                height="100%"
+              />
             </div>
           </div>
 
@@ -158,6 +170,7 @@ const Hero = () => {
                 fontSize: { xs: "2rem", md: "2.5rem" },
                 "&:hover": { color: theme.palette.primary.main },
               }}
+              onClick={() => window.open("https://twitter.com/Filmfinanceapp/")}
             />
             <LinkedInIcon
               sx={{
@@ -165,6 +178,9 @@ const Hero = () => {
                 fontSize: { xs: "2rem", md: "2.5rem" },
                 "&:hover": { color: theme.palette.primary.main },
               }}
+              onClick={() =>
+                window.open("https://www.linkedin.com/company/filmfinanceapp/")
+              }
             />
             <TelegramIcon
               sx={{
@@ -172,21 +188,28 @@ const Hero = () => {
                 fontSize: { xs: "2rem", md: "2.5rem" },
                 "&:hover": { color: theme.palette.primary.main },
               }}
+              onClick={() => window.open("https://t.me/+zgtoRoLProc3MWU1")}
             />
-            <RedditIcon
-              sx={{
-                color: theme.palette.text.medium,
-                fontSize: { xs: "2rem", md: "2.5rem" },
-                "&:hover": { color: theme.palette.primary.main },
-              }}
-            />
+            <DiscordIcon />
           </Box>
         </Box>
       </Container>
       <Downarrow />
       <ScrollToTopButton />
+      <SimpleDialogDemo open={subscribeOpen} setOpen={setSubscribe} />
     </Box>
   );
 };
 
 export default Hero;
+
+const DiscordIcon = () => {
+  return (
+    <img
+      src="/discord.svg"
+      style={{ height: "1.8rem" }}
+      className="discord"
+      onClick={() => window.open("https://discord.gg/djBrRfAS3w")}
+    />
+  );
+};

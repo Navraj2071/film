@@ -13,6 +13,7 @@ import Divider from "@mui/material/Divider";
 import { Typography } from "@mui/material";
 import { useTheme } from "@emotion/react";
 import Text from "../subcomponents/headings";
+import TextSnippetIcon from "@mui/icons-material/TextSnippet";
 
 export default function Sidenav(props) {
   const { open, setOpen, pages } = props;
@@ -81,6 +82,14 @@ export default function Sidenav(props) {
       }}
     >
       {list()}
+      <Button
+        variant="outlined"
+        endIcon={<TextSnippetIcon />}
+        onClick={() => window.open("/litepaper.pdf")}
+        sx={{ margin: "20px" }}
+      >
+        Litepaper
+      </Button>
     </Drawer>
   );
 }

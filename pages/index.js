@@ -74,7 +74,7 @@ export default function Home() {
         <HowItWorks />
         <Team />
         <Roadmap />
-        <Contact />
+        {/* <Contact /> */}
         <Footer />
       </div>
     </>

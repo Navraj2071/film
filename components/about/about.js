@@ -81,6 +81,7 @@ const About = () => {
             "&:hover": { color: theme.palette.primary.main },
             marginTop: { xs: "5rem", sm: "10rem" },
           }}
+          onClick={() => window.open("https://t.me/+zgtoRoLProc3MWU1")}
         >
           Join Us
         </Button>

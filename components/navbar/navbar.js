@@ -17,7 +17,7 @@ import { useTheme } from "@emotion/react";
 import Sidenav from "./sidenav";
 import Text from "../subcomponents/headings";
 
-const pages = ["About", "Roadmap", "Contact"];
+const pages = ["About", "Team", "Roadmap"];
 
 function Navbar() {
   const [sideNavOpen, setSidenavOpen] = React.useState(false);
@@ -47,12 +47,18 @@ function Navbar() {
               aria-haspopup="true"
               onClick={() => setSidenavOpen(true)}
             >
-              <MenuIcon color="primary" fontSize="large" />
+              <MenuIcon
+                fontSize="large"
+                sx={{
+                  color: theme.palette.text.medium,
+                  marginTop: "10px",
+                }}
+              />
             </IconButton>
             <Sidenav
               open={sideNavOpen}
               setOpen={setSidenavOpen}
-              pages={["Features", "About", "Team", "Roadmap", "Contact"]}
+              pages={["Features", "About", "Team", "Roadmap"]}
             />
           </Box>
           <Box
@@ -77,7 +83,7 @@ function Navbar() {
               variant="h4"
               text="FilmFinance"
               sx={{
-                color: theme.palette.text.high,
+                color: theme.palette.text.medium,
                 textShadow: "0px 0px 10px black",
               }}
             />
@@ -104,9 +110,13 @@ function Navbar() {
               </Button>
             ))}
           </Box>
-          <Box sx={{ flexGrow: 0 }}>
-            <Button variant="outlined" endIcon={<TextSnippetIcon />}>
-              Whitepaper
+          <Box sx={{ flexGrow: 0, display: { xs: "none", md: "flex" } }}>
+            <Button
+              variant="outlined"
+              endIcon={<TextSnippetIcon />}
+              onClick={() => window.open("/litepaper.pdf")}
+            >
+              Litepaper
             </Button>
           </Box>
         </Toolbar>
