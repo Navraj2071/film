@@ -27,11 +27,9 @@ function SimpleDialog(props) {
       }),
     })
       .then(async (response) => {
-        return await response.json();
+        onClose();
       })
       .catch((error) => console.error("error", error));
-
-    console.log(response);
   };
 
   return (
@@ -103,7 +101,11 @@ SimpleDialog.propTypes = {
 export default function SimpleDialogDemo({ open, setOpen }) {
   return (
     <div>
-      <SimpleDialog open={open} onClose={() => setOpen(false)} />
+      <SimpleDialog
+        open={open}
+        onClose={() => setOpen(false)}
+        selectedValue=""
+      />
     </div>
   );
 }

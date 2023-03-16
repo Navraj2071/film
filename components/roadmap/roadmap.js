@@ -57,8 +57,12 @@ const Roadmap = () => {
           gutterBottom
         />
 
-        {milestones.map((item) => (
-          <Milestone time={item.time} points={item.points} key={item.time} />
+        {milestones.map((item, index) => (
+          <Milestone
+            time={item.time}
+            points={item.points}
+            key={item.time + index}
+          />
         ))}
       </Container>
     </Box>
