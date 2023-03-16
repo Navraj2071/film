@@ -16,6 +16,7 @@ import { PerspectiveCamera } from "@react-three/drei";
 import { useState, useEffect } from "react";
 import { ScrollControls } from "@react-three/drei";
 import { Scroll } from "@react-three/drei";
+import Head from "next/head";
 
 export default function Home() {
   const fov = 60; // field of view in degrees
@@ -43,6 +44,14 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>FilmFinanceApp</title>
+        <link rel="shortcut icon" href="/logo4.png" />
+        <meta
+          name="description"
+          content="Decentralized media funding, trading and streaming platform."
+        />
+      </Head>
       <Canvas
         style={{
           width: "100%",
